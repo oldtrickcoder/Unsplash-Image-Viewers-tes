@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/styles.css">
+    <title>Unsplash API TES</title>
+</head>
+<body>
+
+    <h1>HELLO THIS IS UNSPLASH  API IMAGE</h1>
+    <h3><b>Jumlah data foto yang tercatat adalah :</b><%= jumlahdata %></h3> 
+    <div class="album-container">
+        <% if(Array.length > 0) { %>
+            <% Array.forEach((entry)=>{ %>
+                <div class="foto-container">
+                <img id="foto" src="<%= entry.gambarSmall %>" alt="<%= entry.altdesc %>" srcset="">
+                <div class="text-container">
+                    <p>   <b>Jumlah Likes :</b> <%= entry.Likes %></p>
+                </div>
+                <div class="text-container">
+                    <p>   <b>Total Foto :</b> <%= entry.TOTALfoto %> </p>
+                </div>
+                <div class="text-container">
+                    <p>  <b>Kreator :</b> <%= entry.owner %> </p>
+                </div>
+                <div class="text-container">
+                    <p>  <b>Bio :</b> <%= entry.bio %> </p>
+                </div>
+                <div class="text-container">
+                    <p></p> <b>Link Instagram :</b>
+                    <a href="https:\\instagram.com\<%= entry.instagram %>" target="_blank">
+                        @<%= entry.instagram %>
+                    </a>
+                    </p>
+                </div>
+                <div class="text-container">
+                    <p></p> <b>Description :</b><%= entry.desc %> </p>
+                </div>
+            </div>
+                <% }); %>
+       <% }else { %>
+        <div class="album-container">
+            <h1>MOHON MAAF SUDAH TIDAK ADA DATA FOTO  LAGI </h1>
+                </div>
+        <% } %>
+   
+    </div>
+
+    <div class="next-page"><a href="<%= NextPage %>">Halaman Selanjutnya  ---></a></div>
+<script src="/scripts/styles.js"></script>
+</body>
+</html>
